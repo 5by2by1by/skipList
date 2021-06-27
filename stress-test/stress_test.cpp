@@ -7,7 +7,7 @@
 
 #define NUM_THREADS 1
 #define TEST_COUNT 100000
-SkipList<int, std::string> skipList(18);
+skipList<int, std::string> skipList(18);
 
 void *insertElement(void* threadid) {
     long tid; 
@@ -63,12 +63,6 @@ int main() {
         std::chrono::duration<double> elapsed1 = finish - start;
         std::cout << "insert elapsed:" << elapsed1.count() << std::endl;
     
-    // skipList.displayList();
-
-    
-        // pthread_t threads[NUM_THREADS];
-        // int rc;
-    // int i;
     start = std::chrono::high_resolution_clock::now();
 
     for( i = 0; i < NUM_THREADS; i++ ) {
